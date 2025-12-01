@@ -8,13 +8,11 @@ body{
   box-sizing: border-box;
 }
 h1{
- font-family: "galix-mono", sans-serif;
-font-weight: 700;
-font-style: normal;
-font-size: 30px;
+font-family: "bc-figural", sans-serif;
+font-weight: 400;
+font-style: italic;
+font-size: 60px;
 color: rgb(71, 70, 70);
-font-weight: 600;
-font-style: normal;;
 }
 
 .map_container{
