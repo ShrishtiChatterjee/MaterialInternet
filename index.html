@@ -17,7 +17,9 @@
        <p class="timestamp">
         00.00.00.00
       </p>
-      <img src="Images/flower_blackandwhite.jpg" style="width:300px;">
+      <div class="active-zone">
+        <img src="Images/flower_blackandwhite.jpg" style="width:300px;">
+      </div>
       <p class="caption">
         My grandfather clicks a picture of pink flowers and sends it to me as a WhatsApp message.
       </p>
@@ -30,7 +32,9 @@
       <p class="timestamp">
         00.00.00.51
       </p>
-      <img src="Images/blackbox.jpg" style="width:150px;">
+      <div class="active-zone">
+        <img src="Images/blackbox.jpg" style="width:150px;">
+      </div>
       
       <p class="caption">
         It may be true that the internet is not just a black box, but sometimes it passes through a black box
@@ -40,14 +44,16 @@
     </div>
 
     <div class="map-piece" style="top: 25%; left: 1100px;">
-      <img src="Images/IIMK_Blue.jpg" style="width: 400px;px;">
+      <img src="Images/IIMK_Blue.jpg" style="width: 400px;">
     </div>
 
     <div class="map-piece over" style="top: 50%; left: 800px;">
       <p class="timestamp">
         00.00.00.54
       </p>
-      <img src="Images/OFCport1.jpg" style="width: 350px;">
+      <div class="active-zone">
+        <img src="Images/OFCport1.jpg" style="width: 350px;">
+      </div>
       
       <p class="caption">
         Outside his house is a moss covered stone carved with letters OFC.
@@ -63,7 +69,9 @@
         <p class="timestamp">
         00.00.00.51
       </p>
-      <img src="Images/computercenter.jpg" style="width:350px;">
+      <div class="active-zone">
+        <img src="Images/computercenter.jpg" style="width:350px;">
+      </div>
       <p class="caption">
         The computer center has blue cables that direct messages
         within a small neighbourhood, known as the Ethernet, and
@@ -79,7 +87,9 @@
         <p class="timestamp">
         00.00.00.51
       </p>
-      <img src="Images/cablesoutside.jpg" style="width: 250px;">
+      <div class="active-zone">
+        <img src="Images/cablesoutside.jpg" style="width: 250px;">
+      </div>
       <p class="caption">
         The Reliance local office receives the message
         and sends it through its local backbone of over
@@ -94,7 +104,9 @@
         <p class="timestamp">
         00.00.00.51
       </p>
-      <img src="Images/chennaiport.jpg" style="width: 400px;">
+      <div class="active-zone">
+        <img src="Images/chennaiport.jpg" style="width: 400px;">
+      </div>
       <p class="caption">
        It reaches the coast of Chennai
       </p>
@@ -107,21 +119,28 @@
         <p class="timestamp2">
         00.00.00.51
       </p>
-      <img src="Images/MetaSingapore.jpg" style="width: 500px;">
+      <div class="active-zone">
+        <img src="Images/MetaSingapore.jpg" style="width: 500px;">
+      </div>
        <p class="caption">
      Reaches the Meta Data centerin Singapore
       </p>
     </div>
 
 
-      <div class="map-piece" style="bottom:15%; left:3200px;">
-        <p class="timestamp2">
+    <div class="map-piece" style="bottom:15%; left:3200px;">
+      <p class="timestamp2">
         00.00.00.51
       </p>
-        <p class="caption">
+      <p class="caption">
        It passes through a submarine tube in the Indian Ocean
       </p>
-      <img src="Images/indianocean.jpg" style="width: 1150px;">
+      <div class="active-zone">
+        <img src="Images/indianocean.jpg" style="width: 1150px;">
+        <video autoplay muted loop class="inline-video">
+          <source src="Videos/OFC2animation.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
 
    <div class="map-piece" style="top:25%; left:4700px;">
@@ -130,7 +149,7 @@
      Singapore is the only Meta center in Asia
       </p>
    
-    </div>
+    </img>
      <div class="map-piece" style="bottom:10%; left:5200px;">
         <p class="timestamp2">
         00.00.00.51
@@ -141,7 +160,6 @@
       <img src="Images/NorthPacificOcean.jpg" style="width: 1150px;">
     </div>
 
-    <div class="map_container">
     <div class="map-piece" style="top: 23%; left: 6600px;" id="img1">
        <p class="timestamp">
         00.00.00.00
@@ -152,7 +170,6 @@
       </p>
     </div>
 
-      <div class="map_container">
     <div class="map-piece" style="bottom: 10%; left: 7100px;" id="img1">
        <p class="timestamp">
         00.00.00.00
@@ -163,7 +180,6 @@
       </p>
     </div>
 
-        <div class="map_container">
     <div class="map-piece" style="top: 70px; left: 7700px;" id="img1">
        <p class="timestamp">
         00.00.00.00
@@ -180,14 +196,17 @@
 <script>
 document.querySelectorAll('.map-piece').forEach(piece => {
   const video = piece.querySelector('video');
+  const activeZone = piece.querySelector('.active-zone');
   const hoverImg = piece.querySelector('.hover-image');
 
-  piece.addEventListener('mouseenter', () => {
+  if (!activeZone) return;
+
+  activeZone.addEventListener('mouseenter', () => {
     if (video) video.style.display = 'block';
     if (hoverImg) hoverImg.style.display = 'block';
   });
 
-  piece.addEventListener('mouseleave', () => {
+  activeZone.addEventListener('mouseleave', () => {
     if (video) video.style.display = 'none';
     if (hoverImg) hoverImg.style.display = 'none';
   });

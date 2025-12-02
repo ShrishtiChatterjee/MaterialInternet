@@ -6,6 +6,7 @@ body{
   background-color: #fffc5b;
    padding: 10px 40px 40px 40px;  
   box-sizing: border-box;
+  overflow-y: clip;
 }
 h1{
 font-family: "bc-figural", sans-serif;
@@ -32,7 +33,7 @@ color: rgb(71, 70, 70);
 
 
 .map-piece:hover {
-  background-color: white;
+  /* background-color: white; */
 }
 
 .map-piece img{
@@ -41,15 +42,25 @@ color: rgb(71, 70, 70);
 }
 .map-piece video {
   display: none;
-}
-.map-piece:hover video {
-  display: block;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: -1;
+}
+
+.map-piece .active-zone {
+  position: relative;
+}
+
+.map-piece .active-zone video {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .map-piece .hover-image {
