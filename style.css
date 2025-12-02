@@ -83,6 +83,7 @@ color: rgb(71, 70, 70);
 
 .map-piece .active-zone {
   position: relative;
+  width: fit-content;
 }
 
 .map-piece .active-zone video {
