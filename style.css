@@ -10,6 +10,7 @@ body{
 }
 
 .header {
+  position: fixed;
   display: flex;
   align-items: center;
 }
@@ -47,7 +48,8 @@ color: rgb(71, 70, 70);
 }
 
 .map_container{
-  position: relative;
+  position: absolute;
+  top: 168px;
   width:600vw;
   height:100vh;
   overflow: visible;
@@ -78,6 +80,8 @@ color: rgb(71, 70, 70);
   right: 0;
   bottom: 0;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   z-index: -1;
 }
 
@@ -167,11 +171,11 @@ font-style: normal;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 40%;
+  height: 60%;
   background-color: #D4D4D4;
   z-index: 100;
-  transform: translateX(-100%);
+  transform: translate(-100%, -100%);
   transition: transform 0.5s ease;
 
   .close-btn {
