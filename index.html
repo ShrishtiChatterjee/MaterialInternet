@@ -188,7 +188,12 @@
     if (!activeZone) return;
 
     activeZone.addEventListener("mouseenter", () => {
-      if (video) video.style.display = "block";
+      if (video) {
+        video.style.display = "block";
+        video.currentTime = 0; // restart from beginning
+        video.muted = false;   // enable sound
+        video.play();          // ensure video plays
+      }
       if (hoverImg) hoverImg.style.display = "block";
       if (caption) caption.style.backgroundColor = "white";
       if (timestamp) timestamp.style.backgroundColor = "white";
@@ -202,7 +207,11 @@
     });
 
     activeZone.addEventListener("mouseleave", () => {
-      if (video) video.style.display = "none";
+      if (video) {
+        video.style.display = "none";
+        video.muted = true;    // mute when not hovering
+        video.pause();         // pause the video
+      }
       if (hoverImg) hoverImg.style.display = "none";
       if (caption) caption.style.backgroundColor = "transparent";
       if (timestamp) timestamp.style.backgroundColor = "transparent";
