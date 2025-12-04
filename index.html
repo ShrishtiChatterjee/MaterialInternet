@@ -171,6 +171,10 @@
           <p>This is the content of the pop-up.</p>
         </div>
       </div>
+
+      <div class="progress-bar">
+        <img src="ScrollIcon/pixelflower-27.png" alt="progress-bar">
+      </div>
     </div>
   </body>
 </html>
@@ -233,5 +237,19 @@
   closeBtn.addEventListener("click", () => {
     const popOverlay = document.querySelector(".pop-overlay");
     popOverlay.style.transform = "translateX(-100%)";
+  });
+</script>
+
+<script>
+  document.addEventListener("scroll", () => {
+    const progressBar = document.querySelector(".progress-bar");
+    const progressBarIcon = progressBar.querySelector("img");
+    const mapContainer = document.querySelector(".map_container");
+    const scrollPosition = window.scrollX;
+    const mapContainerWidth = mapContainer.offsetWidth;
+    const progress = scrollPosition / mapContainerWidth;
+
+    const index = Math.round(progress * 24) + 27;
+    progressBarIcon.src = `ScrollIcon/pixelflower-${index}.png`;
   });
 </script>
