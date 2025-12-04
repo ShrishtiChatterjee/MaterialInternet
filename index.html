@@ -226,12 +226,12 @@
   const aboutBtn = document.querySelector(".about-btn");
   aboutBtn.addEventListener("click", () => {
     const popOverlay = document.querySelector(".pop-overlay");
-    popOverlay.style.transform = "translate(0, 0)";
+    popOverlay.style.transform = "translateX(0)";
   });
 
   const closeBtn = document.querySelector(".close-btn");
   closeBtn.addEventListener("click", () => {
     const popOverlay = document.querySelector(".pop-overlay");
-    popOverlay.style.transform = "translate(-100%, -100%)";
+    popOverlay.style.transform = "translateX(-100%)";
   });
 </script>
