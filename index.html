@@ -180,6 +180,8 @@
 
   document.querySelectorAll(".map-piece").forEach((piece) => {
     const video = piece.querySelector("video");
+    const timestamp = piece.querySelector(".timestamp");
+    const caption = piece.querySelector(".caption");
     const activeZone = piece.querySelector(".active-zone");
     const hoverImg = piece.querySelector(".hover-image");
 
@@ -188,6 +190,8 @@
     activeZone.addEventListener("mouseenter", () => {
       if (video) video.style.display = "block";
       if (hoverImg) hoverImg.style.display = "block";
+      if (caption) caption.style.backgroundColor = "white";
+      if (timestamp) timestamp.style.backgroundColor = "white";
 
       // hide all other map pieces
       allMapPieces.forEach((p) => {
@@ -200,6 +204,8 @@
     activeZone.addEventListener("mouseleave", () => {
       if (video) video.style.display = "none";
       if (hoverImg) hoverImg.style.display = "none";
+      if (caption) caption.style.backgroundColor = "transparent";
+      if (timestamp) timestamp.style.backgroundColor = "transparent";
 
       // show all other active zones
       allMapPieces.forEach((p) => {
